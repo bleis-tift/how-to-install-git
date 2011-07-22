@@ -1,77 +1,239 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
 
-  <title>bleis-tift/how-to-install-git @ GitHub</title>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #ab6206;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #549df9; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #549df9; }
-    h3 { text-align: center; color: #549df9; }
-    a { color: #549df9; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<body>
-  <a href="http://github.com/bleis-tift/how-to-install-git"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/bleis-tift/how-to-install-git/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/bleis-tift/how-to-install-git/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to install Git. &mdash; how-to-install-git v1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="how-to-install-git v1.0.0 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li><a href="#">how-to-install-git v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
     </div>
 
-    <h1><a href="http://github.com/bleis-tift/how-to-install-git">how-to-install-git</a>
-      <span class="small">by <a href="http://github.com/bleis-tift">bleis-tift</a></span></h1>
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-install-git">
+<h1>How to install Git.<a class="headerlink" href="#how-to-install-git" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="contents local topic" id="id1">
+<p class="topic-title first">目次</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id10">1 はじめに</a></li>
+<li><a class="reference internal" href="#id3" id="id11">2 インストール</a><ul>
+<li><a class="reference internal" href="#windows" id="id12">2.1 Windows</a><ul>
+<li><a class="reference internal" href="#msysgit" id="id13">2.1.1 msysgitのインストール</a></li>
+<li><a class="reference internal" href="#nkf" id="id14">2.1.2 nkfのインストール</a></li>
+<li><a class="reference internal" href="#id6" id="id15">2.1.3 日本語入力と日本語出力の準備</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mac" id="id16">2.2 Mac</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7" id="id17">3 初期設定</a><ul>
+<li><a class="reference internal" href="#id8" id="id18">3.1 ユーザ情報を設定</a></li>
+<li><a class="reference internal" href="#id9" id="id19">3.2 エディタを設定</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id10">1 はじめに</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>このドキュメントはSCM Boot Camp in Tokyo(2011-07-30)配布資料の原稿です。</li>
+<li>GitのインストールドキュメントがPython製ツールであるSphinxで書かれていることに疑問なんてない。</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">2 インストール</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="windows">
+<h3><a class="toc-backref" href="#id12">2.1 Windows</a><a class="headerlink" href="#windows" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Windowsでは、CygwinにGitを導入する方法と、msysgitを導入する方法の2通りの方法があります。</p>
+<p>今回はお手軽かつ高速なmsysgitを導入します。</p>
+<p>msysgitの場合、msysgit本体だけではうまく日本語が扱えないので、nkfというプログラムの導入も行う必要があります。</p>
+<div class="section" id="msysgit">
+<h4><a class="toc-backref" href="#id13">2.1.1 msysgitのインストール</a><a class="headerlink" href="#msysgit" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="http://code.google.com/p/msysgit/">msysgitのサイト</a> に移動し、Git-1.7.6-preview201107xx.exeと書かれたリンクを選択します。</p>
+<p><img alt="win-001" src="_images/00118.png" /></p>
+</li>
+<li><p class="first">ダウンロード用のリンクを選択し、インストーラをダウンロードします。</p>
+<p><img alt="win-002" src="_images/00218.png" /></p>
+</li>
+<li><p class="first">ダウンロードしてきたファイルを実行します。</p>
+<p><img alt="win-003" src="_images/00318.png" /></p>
+</li>
+<li><p class="first">ライセンスが表示されます。</p>
+<p><img alt="win-004" src="_images/00418.png" /></p>
+</li>
+<li><p class="first">インストール場所は、特にこだわりがなければそのままにしておきます。
+32bit版の場合、(x86)は付かないので注意してください。</p>
+<p><img alt="win-005" src="_images/00518.png" /></p>
+</li>
+<li><p class="first">インストールの設定です。
+デスクトップにショートカットがあっても邪魔なだけなので、外しておきます。</p>
+<p>Git Bash Hereがあった方が何かと便利なので、Windows Explorer integrationは
+「Context menu entries」がいいでしょう。</p>
+<p>Git GUI HereはGit Bash Hereから起動できるので、ここではチェックを入れていません。</p>
+<p><img alt="win-006" src="_images/00618.png" /></p>
+</li>
+<li><p class="first">スタートメニューに登録する名前です。</p>
+<p><img alt="win-007" src="_images/00718.png" /></p>
+</li>
+<li><p class="first">PATHにgitの実行ファイルが格納されたbinを使いするかどうかです。
+基本的にはGit Bash Hereを使うことになるので、ここではデフォルトのままにしておきます。</p>
+<p><img alt="win-008" src="_images/00818.png" /></p>
+</li>
+<li><p class="first">改行文字の変換の設定です。
+後で変更可能なのでどれでもいいのですが、プアなエディタを使っているのでなければ、
+一番下の「何も変換しない」設定がおすすめです。</p>
+<p><img alt="win-009" src="_images/00918.png" /></p>
+</li>
+<li><p class="first">しばらくお待ちください。</p>
+</li>
+</ol>
+<blockquote>
+<div><img alt="win-010" src="_images/01018.png" /></div></blockquote>
+<ol class="arabic simple" start="11">
+<li>msysgitのインストールは終了です。</li>
+</ol>
+<blockquote>
+<div><img alt="win-011" src="_images/01118.png" /></div></blockquote>
+</div>
+<div class="section" id="nkf">
+<h4><a class="toc-backref" href="#id14">2.1.2 nkfのインストール</a><a class="headerlink" href="#nkf" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://skydrive.live.com/#cid=C562DFDEB23518F0&amp;id=C562DFDEB23518F0%21376">nkf</a> をダウンロードし、展開します。</li>
+<li>binの中にあるnkf.exeを、Gitをインストールしたディレクトリのbinの中にコピーします。</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h4><a class="toc-backref" href="#id15">2.1.3 日本語入力と日本語出力の準備</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Windowsでは、Gitのインストールディレクトリのetcの中にあるファイルを編集する必要があります。</p>
+<p>Windows Vista/7をお使いの方は以下の手順を実行前に、
+Usersグループに対してetcディレクトリに書き込み権限を与えておいてください。</p>
+<ol class="arabic">
+<li><p class="first">inputrcを開き、</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># disable/enable 8bit input</span>
+<span class="c"># set meta-flag on</span>
+<span class="c"># set input-meta on</span>
+<span class="c"># set output-meta off</span>
+<span class="c"># set convert-meta on</span>
+</pre></div>
+</div>
+<p>と書かれた場所を探します。おそらく14行目付近にあるはずです。</p>
+<p>これを以下のように書き換えます。</p>
+<div class="highlight-python"><pre># disable/enable 8bit input
+# set meta-flag on
+# set input-meta on
+# set output-meta off
+# set convert-meta on
+set convert-meta off
+set meta-flag on
+set output-meta on
+set kanji-code utf-8</pre>
+</div>
+<p>この修正により、日本語の入力が可能になります。</p>
+</li>
+<li><p class="first">profileを開き、ファイルの最後に</p>
+<div class="highlight-python"><pre>export GIT_PAGER="nkf -s | LESSCHARSET=utf-8 less"</pre>
+</div>
+<p>と追記します。</p>
+<p>この修正により、日本語の出力が可能になります。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="mac">
+<h3><a class="toc-backref" href="#id16">2.2 Mac</a><a class="headerlink" href="#mac" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>MacPortsを使えば手軽にインストールできます。</p>
+<ol class="arabic">
+<li><p class="first">以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>sudo port install git-core</pre>
+</div>
+</li>
+<li><p class="first">インストール終了です。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id17">3 初期設定</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>必要最小限の設定を行います。</p>
+<p>Windowsの場合、適当なディレクトリを右クリックして、Git Bash Hereを実行します。</p>
+<p>その他のOSの場合、bashなりzshなりを開きます。</p>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id18">3.1 ユーザ情報を設定</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>git config --global user.name ユーザ名
+git config --global user.email メールアドレス
+git config --global color.ui auto</pre>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id19">3.2 エディタを設定</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>コミットメッセージなどを入力するエディタの設定を行います。</p>
+<p>エディタの選定基準としては、</p>
+<ul class="simple">
+<li>デフォルトのエンコーディング方式をUTF-8にできる、
+もしくは起動時にエンコーディング方式をUTF-8にできる</li>
+<li>保存と終了が簡単にできる</li>
+</ul>
+<p>を満たすものなら基本的には大丈夫です。</p>
+<p>例えば、WindowsでGVimを使用する場合、Gitのインストールディレクトリのetcの中にあるprofileを開き、
+ファイルの最後に以下の記述を追加します。</p>
+<div class="highlight-python"><pre>export GIT_EDITOR='/C/Apps/vim/gvim.exe'</pre>
+</div>
+<p>パスに空白が入っていると面倒なので、空白が入っていない場所に入れておくといいでしょう。</p>
+<p>Windows以外の場合、ホームディレクトリの.bashrcなどのファイルに、上記の記述を追記します。</p>
+</div>
+</div>
+</div>
 
-    <div class="description">
-      How to install Git.
+
+          </div>
+      </div>
+      <div class="clearer"></div>
     </div>
-
-    <h2>Authors</h2>
-<p>bleis-tift (bleis-tift@hotmail.co.jp)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>bleis-tift (hey_c_est_la_vie@hotmail.co.jp)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/bleis-tift/how-to-install-git/zipball/master">zip</a> or
-      <a href="http://github.com/bleis-tift/how-to-install-git/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/bleis-tift/how-to-install-git</pre>
-    </p>
-
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li><a href="#">how-to-install-git v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
     <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/bleis-tift/how-to-install-git">bleis-tift/how-to-install-git</a>
+        &copy; Copyright 2011, bleis-tift.
+      最終更新: 2011/07/23
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
     </div>
-
-  </div>
-
-  
-</body>
+  </body>
 </html>
