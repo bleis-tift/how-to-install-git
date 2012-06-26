@@ -5,15 +5,25 @@ Githubの利用
 アカウントの作成
 ================
 
-#. https://github.com にアクセスします。
+1. https://github.com にアクセスします。
 
-#. 画面中央にある"Plans, Pricing and Signup"をクリックします。
+  |github-001|
 
-#. 画面右上にある"Create a free account"をクリックします。
+2. 画面中央にある"Plans, Pricing and Signup"をクリックします。
 
-#. 入力フォームに必要な情報を入力します。
+  |github-002|
 
-#. 以上でGithubのアカウンの作成は完了です。
+3. 画面右上にある"Create a free account"をクリックします。
+
+  |github-003|
+
+4. 入力フォームに必要な情報を入力します。
+
+5. 以上でGithubのアカウンの作成は完了です。
+
+.. |github-001| image:: img/github/001.png
+.. |github-002| image:: img/github/002.png
+.. |github-003| image:: img/github/003.png
 
 Githubアカウントの設定
 ======================
