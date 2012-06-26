@@ -217,4 +217,3 @@ man_pages = [
      [u'bleis-tift'], 1)
 ]
 
-execfile('../common.py')
