@@ -103,6 +103,7 @@ github ではウェブインタフェースからリポジトリの管理がで�
 Repository Name に作成したいリポジトリの名前、Description に説明を記入します。
 
 Private にすると他人には見えないリポジトリを作れますが、月額料金がかかります。
+
 README の自動作成や .gitignore (ビルドの中間ファイルなど、コミットしたくないファイルを指定する)
 の自動作成機能もついたようです。慣れたら遊んでみてください。
 
@@ -130,16 +131,17 @@ README の自動作成や .gitignore (ビルドの中間ファイルなど、コ
     git remote add origin git@github.com:tomykaira/scmbc-sample.git
     git push -u origin master     # push
 
-まだローカルにリポジトリがない場合は、``Next steps:`` に進みます。
-すでにローカルでリポジトリがつくってあって、作業をすすめている場合は``Existing Git Repo?`` のほうの操作をおこないます。
-基本的にはここに出てくるコマンドをぜんぶターミナルにコピペすれば OK です。
+まだローカルにリポジトリがない場合は ``Next steps:`` に進みます。
+すでにローカルでリポジトリがつくってあって、作業をすすめている場合は ``Existing Git Repo?`` のほうの操作をおこないます。
+
+基本的にはこれらの出てくるコマンドをぜんぶターミナルにコピペすれば OK です。
 
 push というのは外部のリポジトリに手元のリポジトリからコミットのデータを送信することです。
 push は自分でリポジトリを作ったときだけでなく、更新したときや、共有リポジトリにデータを送信するときにも使う重要なコマンドです。 ``git push リポジトリ名 ブランチ名`` という使い方を覚えておいてください。
 
 うまく push できたら、ブラウザを更新してみてください。README の内容が次のように表示されるはずです。
 
-  |github_created|
+  |github-created|
 
 CUI が好きな人は、 hub_ を使ってみてください。
 hub_ をつかうと次のような操作になります。
@@ -149,6 +151,7 @@ hub_ をつかうと次のような操作になります。
   > hub create
   Updating origin
   created repository: tomykaira/existing_git_repo
+
   > git push origin master -u
   Counting objects: 3, done.
   Writing objects: 100% (3/3), 215 bytes, done.
@@ -172,7 +175,7 @@ Github から clone する
 
 中身を見るだけなら github 上でもできますし、簡単な編集なら github にエディタが付いていますが、使い慣れたエディタのほうが作業しやすいですし、ミスも少ないです。
 
-まず clone したいリポジトリのページに行きます。
+まず clone したいリポジトリのページに行きます(今回は Spoon-Knife_)。
 
   |github-clone-address|
 
@@ -204,9 +207,12 @@ clone できました。必要な変更をして使いましょう。
   環境によっては SSL の問題で ``https://`` が使えないことがあります。
   その場合 ``Git Read-Only`` のボタンを押して ``git::`` ではじまる URL でやるとうまくいきます。
 
-Social Coding のかなめは fork です。fork は手元に clone するのではなく、github 上でリポジトリを clone します。
+Social Coding のかなめは fork です。
+
+fork は手元に clone するのではなく、github 上でリポジトリを clone します。
 こうすることでコミット権のないリポジトリを変更し、それをみんなに見てもらうことができます。
 より詳しい説明は、 `Fork A Repo`_ を参照してください。
 
-.. |github-crone-address| image:: img/github/007-clone-address.png
+.. |github-clone-address| image:: img/github/007-clone-address.png
+.. _Spoon-Knife: https://github.com/octocat/Spoon-Knife
 .. _Fork a repo: https://help.github.com/articles/fork-a-repo
