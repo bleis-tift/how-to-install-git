@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Githubの利用 &mdash; how-to-install-git v1.0.0 documentation</title>
+    <link rel="stylesheet" href="static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/translations.js"></script>
+    <link rel="top" title="how-to-install-git v1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="1. Gitのインストール" href="install.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="install.html" title="1. Gitのインストール"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">how-to-install-git v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="github">
+<h1>2. Githubの利用<a class="headerlink" href="#github" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>2.1. アカウントの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://github.com">https://github.com</a> にアクセスします。</li>
+</ol>
+<blockquote>
+<div><img alt="github-001" src="images/0015.png" /></div></blockquote>
+<ol class="arabic simple" start="2">
+<li>画面中央にある&#8221;Plans, Pricing and Signup&#8221;をクリックします。</li>
+</ol>
+<blockquote>
+<div><img alt="github-002" src="images/0025.png" /></div></blockquote>
+<ol class="arabic simple" start="3">
+<li>画面右上にある&#8221;Create a free account&#8221;をクリックします。</li>
+</ol>
+<blockquote>
+<div><img alt="github-003" src="images/0035.png" /></div></blockquote>
+<ol class="arabic simple" start="4">
+<li>入力フォームに必要な情報を入力します。</li>
+<li>以上でGithubのアカウンの作成は完了です。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>2.2. Githubアカウントの設定<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>先ほど作成したアカウント情報をgitに設定します。</p>
+<blockquote>
+<div><div class="highlight-python"><pre>git config --global user.name "ユーザネーム"
+git config --global user.email "メールアドレス"</pre>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">ここで指定するメールアドレスは正しいメールアドレスである必要はありません。
+もし公開したくない場合は&#8221;<a class="reference external" href="mailto:someone&#37;&#52;&#48;gmail">someone<span>&#64;</span>gmail</a>&#8220;のように設定すると良いでしょう。</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p>もしリポジトリ個別に設定したい場合は、対象とするリポジトリのディレクトリに移動した後
+以下のようにglobalオプションを外して実行することで行うことができます。</p>
+<div class="last highlight-python"><pre>git config user.name "ユーザネーム"
+git config user.email "メールアドレス"</pre>
+</div>
+</div>
+<p>以上でGithubアカウントのGitに対する設定は完了です。</p>
+<div class="section" id="id3">
+<h3>2.2.1. パスワードのキャッシュ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>この設定はgitのバージョンが1.7.10以降の場合のみ利用可能です。
+Gitのバージョンを確認するには以下のコマンドを実行します。</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">git</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<p>パスワードのキャッシュ機能を利用するには以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>git config --global credential.helper cache</pre>
+</div>
+<p>デフォルトでは15分の間1度入力したパスワードをキャッシュしてくれます。
+この設定を変更したい場合は以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>git config --global credential.helper 'cache --timeout=3600'</pre>
+</div>
+<p>時間の単位は秒で指定するので上記の例では1時間パスワードをキャッシュしてくれるようになります。</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">パスワードのキャッシュ機能については <a class="reference external" href="https://help.github.com/articles/set-up-git">Githubのヘルプ</a> にプラットフォーム毎の
+設定が詳しく書かれています。英語で書かれていますが、興味ある方はそちらも合わせて
+確認してみると良いでしょう。</p>
+</div>
+<p>以上でGithubアカウントの設定は完了です。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2.3. Github にリポジトリをつくる<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>github ではウェブインタフェースからリポジトリの管理ができます。
+まずはリポジトリの作成と、そこへのコミットを試してみます。</p>
+<p>トップページの New Repository ボタンを押します。</p>
+<blockquote>
+<div><img alt="github-newrepo" src="images/004-newrepo2.png" /></div></blockquote>
+<p>作成ページに飛びます。
+Repository Name に作成したいリポジトリの名前、Description に説明を記入します。</p>
+<p>Private にすると他人には見えないリポジトリを作れますが、月額料金がかかります。</p>
+<p>README の自動作成や .gitignore (ビルドの中間ファイルなど、コミットしたくないファイルを指定する)
+の自動作成機能もついたようです。慣れたら遊んでみてください。</p>
+<blockquote>
+<div><img alt="github-create" src="images/005-create-page2.png" /></div></blockquote>
+<p>無事リポジトリの作成が終わると、次のような「まずどうする?」の説明が出ます。</p>
+<div class="highlight-python"><pre>Next steps:
+
+  mkdir scmbc-sample
+  cd scmbc-sample
+  git init                      # git リポジトリを作成する
+  touch README
+  git add README                # README ファイルを追加する
+  git commit -m 'first commit'  # コミットをおこなう
+  git remote add origin git@github.com:tomykaira/scmbc-sample.git # github に作成したリポジトリに push できるように設定
+  git push -u origin master     # push する
+
+
+Existing Git Repo?
+
+  cd existing_git_repo          # すでにあるリポジトリに移動
+  git remote add origin git@github.com:tomykaira/scmbc-sample.git
+  git push -u origin master     # push</pre>
+</div>
+<p>まだローカルにリポジトリがない場合は <tt class="docutils literal"><span class="pre">Next</span> <span class="pre">steps:</span></tt> に進みます。
+すでにローカルでリポジトリがつくってあって、作業をすすめている場合は <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Git</span> <span class="pre">Repo?</span></tt> のほうの操作をおこないます。</p>
+<p>基本的にはこれらの出てくるコマンドをぜんぶターミナルにコピペすれば OK です。</p>
+<p>push というのは外部のリポジトリに手元のリポジトリからコミットのデータを送信することです。
+push は自分でリポジトリを作ったときだけでなく、更新したときや、共有リポジトリにデータを送信するときにも使う重要なコマンドです。 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">リポジトリ名</span> <span class="pre">ブランチ名</span></tt> という使い方を覚えておいてください。</p>
+<p>うまく push できたら、ブラウザを更新してみてください。README の内容が次のように表示されるはずです。</p>
+<blockquote>
+<div><img alt="github-created" src="images/006-created2.png" /></div></blockquote>
+<p>CUI が好きな人は、 <a class="reference external" href="https://github.com/defunkt/hub">hub</a> を使ってみてください。
+<a class="reference external" href="https://github.com/defunkt/hub">hub</a> をつかうと次のような操作になります。</p>
+<div class="highlight-python"><pre>&gt; hub create
+Updating origin
+created repository: tomykaira/existing_git_repo
+
+&gt; git push origin master -u
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 215 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:tomykaira/existing_git_repo.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.</pre>
+</div>
+<p>お手軽ですね。</p>
+</div>
+<div class="section" id="github-clone">
+<h2>2.4. Github から clone する<a class="headerlink" href="#github-clone" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すでにあるリポジトリの中身を使いたい場合、そのリポジトリを手元に clone する必要があります。
+だれかと一緒に作業する時も、たいていすでにあるリポジトリを clone して、変更を加えていきます。</p>
+<p>中身を見るだけなら github 上でもできますし、簡単な編集なら github にエディタが付いていますが、使い慣れたエディタのほうが作業しやすいですし、ミスも少ないです。</p>
+<p>まず clone したいリポジトリのページに行きます(今回は <a class="reference external" href="https://github.com/octocat/Spoon-Knife">Spoon-Knife</a>)。</p>
+<blockquote>
+<div><img alt="github-clone-address" src="images/007-clone-address2.png" /></div></blockquote>
+<p>この URL をコピーします。コピーボタンでも OK。</p>
+<p>ターミナルに、次のように打ち込みます。</p>
+<div class="highlight-python"><pre>git clone https://github.com/octocat/Spoon-Knife.git</pre>
+</div>
+<p>すると…</p>
+<div class="highlight-python"><pre>~/tmp&gt; git clone https://github.com/octocat/Spoon-Knife.git
+Cloning into 'Spoon-Knife'...
+remote: Counting objects: 24, done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 24 (delta 7), reused 19 (delta 3)
+Unpacking objects: 100% (24/24), done.
+~/tmp&gt; ls Spoon-Knife/
+.  ..  forkit.gif  .git  index.html  README</pre>
+</div>
+<p>clone できました。必要な変更をして使いましょう。</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">環境によっては SSL の問題で <tt class="docutils literal"><span class="pre">https://</span></tt> が使えないことがあります。
+その場合 <tt class="docutils literal"><span class="pre">Git</span> <span class="pre">Read-Only</span></tt> のボタンを押して <tt class="docutils literal"><span class="pre">git::</span></tt> ではじまる URL でやるとうまくいきます。</p>
+</div>
+<p>Social Coding のかなめは fork です。</p>
+<p>fork は手元に clone するのではなく、github 上でリポジトリを clone します。
+こうすることでコミット権のないリポジトリを変更し、それをみんなに見てもらうことができます。
+より詳しい説明は、 <a class="reference external" href="https://help.github.com/articles/fork-a-repo">Fork A Repo</a> を参照してください。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="install.html" title="1. Gitのインストール"
+             >前へ</a> |</li>
+        <li><a href="index.html">how-to-install-git v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, bleis-tift.
+      最終更新: 2012/07/19
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>
